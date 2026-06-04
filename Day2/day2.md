@@ -1,12 +1,25 @@
-# Day 2
+# Day 2 - Before and After Prompt Comparison
 
-## What I Did
-Used MetaPrompt with Claude AI.
+## Before Prompt
 
-## Prompt Used
-Create a 60-day DSA roadmap for placements.
+Write something about social media.
 
-## Key Learnings
-- Better prompts give better answers.
-- MetaPrompt converts simple prompts into structured prompts.
-- Claude gives more detailed responses with optimized prompts.
+## After Prompt
+
+You are a marketing coach.
+Write a 150-word LinkedIn post for small business owners on using Instagram Reels.
+
+## Comparison
+
+Before prompt was vague and lacked audience, role, and objective.
+
+After prompt:
+- Assigns a role (marketing coach)
+- Defines the audience (small business owners)
+- Specifies the platform (LinkedIn)
+- Specifies the topic (Instagram Reels)
+- Specifies the length (150 words)
+
+## Learning
+
+A specific and structured prompt produces more focused and useful AI outputs.
