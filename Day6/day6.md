@@ -2,7 +2,13 @@
 
 ## Original Resume Screenshot
 
-(Add screenshot here)
+## Original Resume Screenshot
+
+![Original Resume](Screenshot%202026-06-12%20015238.png)
+
+## Optimized Resume Screenshot
+
+![Optimized Resume](Screenshot%202026-06-12%20015259.png)
 
 ## Optimized Resume Screenshot
 
@@ -10,9 +16,9 @@
 
 ## ATS Score
 
-Previous Score: __/100
+Previous Score: 65/100
 
-Optimized Score: __/100
+Optimized Score: 88/100
 
 ## Key Learnings
 
