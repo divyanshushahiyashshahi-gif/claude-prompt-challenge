@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Divyansu Shahi — Job Search Toolkit 2025</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0D1B3E;
+      --navy-mid: #1A2F5A;
+      --blue: #2462EA;
+      --blue-lt: #60A5FA;
+      --blue-faint: #EEF4FF;
+      --gold: #F59E0B;
+      --gold-faint: #FFFBEB;
+      --emerald: #10B981;
+      --em-faint: #ECFDF5;
+      --red: #EF4444;
+      --red-faint: #FFF1F1;
+      --bg: #EFF4FF;
+      --surface: #FFFFFF;
+      --border: #C7D9FF;
+      --text: #0F1F3D;
+      --muted: #5A6E94;
+      --r: 12px;
+      --r-sm: 8px;
+      --shadow: 0 2px 16px rgba(13,27,62,0.07);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 15px; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, #0A1628 0%, #0D1F4A 55%, #152B6B 100%);
+      color: #fff;
+      padding: 60px 40px 52px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content:''; position:absolute; top:-80px; right:-80px;
+      width:380px; height:380px;
+      background: radial-gradient(circle, rgba(96,165,250,0.13) 0%, transparent 68%);
+      pointer-events:none;
+    }
+    .hero::after {
+      content:''; position:absolute; bottom:-60px; left:8%;
+      width:260px; height:260px;
+      background: radial-gradient(circle, rgba(36,98,234,0.18) 0%, transparent 70%);
+      pointer-events:none;
+    }
+    .hero-inner { max-width: 880px; margin: 0 auto; position: relative; z-index: 1; }
+    .hero-eyebrow {
+      display:inline-flex; align-items:center; gap:7px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+      padding: 5px 15px; border-radius: 100px;
+      font-size: 11.5px; font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 0.6px; color: #93C5FD; margin-bottom: 22px;
+    }
+    .hero-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 54px; font-weight: 800;
+      letter-spacing: -1.8px; line-height: 1.03;
+      margin-bottom: 8px;
+    }
+    .hero-name span {
+      background: linear-gradient(135deg, #93C5FD 0%, #60A5FA 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-role {
+      font-size: 17px; font-weight: 500;
+      color: rgba(255,255,255,0.62);
+      margin-bottom: 28px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .hero-chips { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px; }
+    .hero-chip {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.11);
+      padding: 7px 15px; border-radius: 8px;
+      font-size: 13px; font-weight: 500;
+      display:flex; align-items:center; gap:7px;
+    }
+    .dot-gold { width:7px; height:7px; border-radius:50%; background:#F59E0B; flex-shrink:0; }
+    .hero-contact { display:flex; flex-wrap:wrap; gap:18px; font-size:13px; color:rgba(255,255,255,0.5); }
+    .hero-contact a { color:rgba(255,255,255,0.5); text-decoration:none; transition:color .2s; }
+    .hero-contact a:hover { color:#fff; }
+
+    /* ── NAV ── */
+    .nav-bar {
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 0 40px;
+      position: sticky; top:0; z-index:100;
+      overflow-x:auto; scrollbar-width:none;
+    }
+    .nav-bar::-webkit-scrollbar { display:none; }
+    .nav-inner { display:flex; gap:0; max-width:880px; margin:0 auto; }
+    .nav-a {
+      padding: 13px 14px;
+      font-size: 12px; font-weight: 700;
+      color: var(--muted); text-decoration:none;
+      white-space:nowrap; border-bottom:2px solid transparent;
+      transition: all .2s;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      letter-spacing:0.2px;
+    }
+    .nav-a:hover { color: var(--blue); border-bottom-color: var(--blue); }
+
+    /* ── MAIN ── */
+    .main { max-width:880px; margin:0 auto; padding:36px 40px 80px; }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      margin-bottom: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .card-head {
+      padding: 18px 26px;
+      border-bottom: 1px solid var(--border);
+      display:flex; align-items:center; gap:14px;
+      background: var(--blue-faint);
+    }
+    .sec-num {
+      width:32px; height:32px;
+      background: var(--navy);
+      color:#fff; border-radius:7px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:12px; font-weight:700; flex-shrink:0;
+      font-family:'JetBrains Mono', monospace;
+    }
+    .sec-title {
+      font-family:'Plus Jakarta Sans', sans-serif;
+      font-size:15.5px; font-weight:700; color:var(--navy); flex:1;
+    }
+    .sec-sub { font-size:12px; color:var(--muted); font-weight:400; margin-top:1px; }
+    .card-body { padding:22px 26px; }
+
+    /* ── EMAIL BOX ── */
+    .ebox {
+      background:#FAFCFF;
+      border:1px solid var(--border);
+      border-radius: var(--r-sm);
+      overflow:hidden;
+    }
+    .ebox-head {
+      padding:11px 15px;
+      background: var(--blue-faint);
+      border-bottom:1px solid var(--border);
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+    }
+    .ebox-subj {
+      font-size:12.5px; font-weight:600; color:var(--navy);
+      font-family:'Plus Jakarta Sans', sans-serif;
+      line-height:1.4;
+    }
+    .copy-btn {
+      background: var(--navy); color:#fff; border:none;
+      padding:6px 14px; border-radius:6px;
+      font-size:11.5px; font-weight:700; cursor:pointer;
+      transition:all .2s; white-space:nowrap; flex-shrink:0;
+      font-family:'Plus Jakarta Sans', sans-serif;
+    }
+    .copy-btn:hover { background: var(--blue); }
+    .copy-btn.ok { background: var(--emerald); }
+    .ebox-body {
+      padding:20px 20px;
+      font-size:14px; line-height:1.78; color:var(--text);
+      white-space:pre-wrap; font-family:'Inter', sans-serif;
+    }
+
+    /* ── INTRO SCRIPT ── */
+    .script-box {
+      background: var(--navy);
+      color:#9DB8E4;
+      padding:26px;
+      border-radius: var(--r-sm);
+      font-size:15px;
+      line-height:1.85;
+    }
+    .script-box strong { color:#fff; }
+    .script-hl { color:#93C5FD; font-weight:600; }
+
+    /* ── JOB LIST ── */
+    .job-row {
+      display:flex; align-items:center; gap:12px;
+      padding:12px 0; border-bottom:1px solid var(--border);
+    }
+    .job-row:last-child { border-bottom:none; }
+    .job-n {
+      width:28px; height:28px;
+      background: var(--blue-faint); color:var(--blue);
+      border-radius:6px; display:flex; align-items:center; justify-content:center;
+      font-size:11.5px; font-weight:700; flex-shrink:0;
+      font-family:'JetBrains Mono', monospace;
+    }
+    .job-title-text { flex:1; font-weight:600; font-size:14px; color:var(--navy); font-family:'Plus Jakarta Sans', sans-serif; }
+    .badge {
+      font-size:11px; font-weight:700; padding:3px 10px;
+      border-radius:100px; font-family:'JetBrains Mono', monospace;
+    }
+    .b-hi  { background:var(--em-faint); color:#065F46; }
+    .b-med { background:var(--gold-faint); color:#92400E; }
+
+    /* ── STRENGTHS ── */
+    .str-row {
+      display:flex; gap:14px; padding:13px 0;
+      border-bottom:1px solid var(--border);
+    }
+    .str-row:last-child { border-bottom:none; padding-bottom:0; }
+    .str-icon {
+      width:36px; height:36px;
+      background:var(--blue-faint); border-radius:8px;
+      display:flex; align-items:center; justify-content:center;
+      font-size:16px; flex-shrink:0;
+    }
+    .str-label { font-weight:700; font-size:13.5px; color:var(--navy); font-family:'Plus Jakarta Sans', sans-serif; margin-bottom:2px; }
+    .str-desc { font-size:13px; color:var(--muted); line-height:1.55; }
+
+    /* ── SKILL BARS ── */
+    .sb-row { margin-bottom:14px; }
+    .sb-head { display:flex; justify-content:space-between; margin-bottom:6px; }
+    .sb-name { font-size:13px; font-weight:600; color:var(--navy); font-family:'Plus Jakarta Sans', sans-serif; }
+    .sb-pct  { font-size:11.5px; color:var(--muted); font-family:'JetBrains Mono', monospace; }
+    .sb-bg   { height:6px; background:var(--border); border-radius:100px; overflow:hidden; }
+    .sb-fill { height:100%; border-radius:100px; }
+    .bar-b { background:linear-gradient(90deg, var(--blue), var(--blue-lt)); }
+    .bar-g { background:linear-gradient(90deg, #F59E0B, #FBBF24); }
+    .bar-r { background:linear-gradient(90deg, #EF4444, #F87171); }
+
+    /* ── TWO COL ── */
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:22px; }
+    .col-block {
+      background:var(--bg); border:1px solid var(--border);
+      border-radius:var(--r-sm); padding:18px;
+    }
+    .col-block-title {
+      font-size:11px; font-weight:700; text-transform:uppercase;
+      letter-spacing:0.8px; color:var(--muted); margin-bottom:11px;
+      font-family:'JetBrains Mono', monospace;
+    }
+    .blist { list-style:none; }
+    .blist li {
+      font-size:13.5px; color:var(--text); padding:4px 0 4px 15px;
+      position:relative; line-height:1.5;
+    }
+    .blist li::before {
+      content:'▸'; position:absolute; left:0; color:var(--blue);
+      font-size:10px; top:7px;
+    }
+
+    /* ── ROADMAP ── */
+    .rm-row { display:flex; gap:14px; margin-bottom:15px; }
+    .rm-mo {
+      background:var(--navy); color:#fff;
+      padding:5px 10px; border-radius:6px;
+      font-size:10.5px; font-weight:700; font-family:'JetBrains Mono', monospace;
+      white-space:nowrap; height:fit-content; margin-top:3px;
+    }
+    .rm-title { font-weight:700; font-size:14px; color:var(--navy); margin-bottom:2px; font-family:'Plus Jakarta Sans', sans-serif; }
+    .rm-desc  { font-size:13px; color:var(--muted); line-height:1.5; }
+
+    /* ── BRAND ── */
+    .brand-blk {
+      padding:18px 20px; border-radius:var(--r-sm); margin-bottom:14px;
+    }
+    .brand-blk-title {
+      font-size:10.5px; font-weight:700; text-transform:uppercase;
+      letter-spacing:0.9px; margin-bottom:9px;
+      font-family:'JetBrains Mono', monospace;
+    }
+    .brand-blk-body { font-size:14.5px; line-height:1.68; }
+    .hl-box {
+      background:linear-gradient(135deg, var(--navy) 0%, #1B3A7A 100%);
+      color:rgba(255,255,255,0.85); padding:18px 22px;
+      border-radius:var(--r-sm); font-size:14px; line-height:1.6;
+      font-family:'Plus Jakarta Sans', sans-serif; font-weight:500;
+      margin-bottom:10px;
+    }
+    .hl-box .hb { color:#93C5FD; }
+
+    /* ── INTERVIEW ── */
+    .iw-item {
+      padding:13px 16px;
+      background:var(--blue-faint);
+      border-left:3px solid var(--blue);
+      border-radius:0 var(--r-sm) var(--r-sm) 0;
+      margin-bottom:11px;
+    }
+    .iw-item:last-child { margin-bottom:0; }
+    .iw-q { font-size:13px; font-weight:700; color:var(--navy); margin-bottom:4px; font-family:'Plus Jakarta Sans', sans-serif; }
+    .iw-a { font-size:13px; color:var(--muted); line-height:1.55; }
+
+    /* ── UTILS ── */
+    .lbl {
+      display:block; font-size:10.5px; font-weight:700;
+      text-transform:uppercase; letter-spacing:1px;
+      color:var(--muted); margin-bottom:8px;
+      font-family:'JetBrains Mono', monospace;
+    }
+    .divider { height:1px; background:var(--border); margin:20px 0; }
+    .tags-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
+    .tag {
+      display:inline-flex; align-items:center;
+      padding:4px 12px; border-radius:100px;
+      font-size:11.5px; font-weight:600;
+      font-family:'JetBrains Mono', monospace;
+    }
+    .t-bl { background:var(--blue-faint); color:#1D4ED8; }
+    .t-gd { background:var(--gold-faint); color:#92400E; }
+    .t-gr { background:var(--em-faint); color:#065F46; }
+    .t-nv { background:var(--navy); color:#fff; }
+    p { margin-bottom:11px; }
+    p:last-child { margin-bottom:0; }
+
+    footer {
+      background:var(--navy); color:rgba(255,255,255,0.35);
+      text-align:center; padding:22px 40px;
+      font-size:11.5px; font-family:'JetBrains Mono', monospace;
+    }
+
+    @media (max-width:660px) {
+      .hero { padding:36px 18px 32px; }
+      .hero-name { font-size:36px; }
+      .nav-bar { padding:0 14px; }
+      .main { padding:22px 14px 60px; }
+      .card-body { padding:16px 14px; }
+      .card-head { padding:14px; }
+      .two-col { grid-template-columns:1fr; }
+      .ebox-head { flex-wrap:wrap; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ╔══ HERO ══╗ -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">🎯 &nbsp; TARGET ROLE: DATA ANALYST INTERN · 2025</div>
+    <h1 class="hero-name">Divyansu <span>Shahi</span></h1>
+    <p class="hero-role">B.Tech CSE (Data Science) · ABES Engineering College, Ghaziabad · 2nd Year</p>
+    <div class="hero-chips">
+      <div class="hero-chip"><span class="dot-gold"></span> CGPA 8.16</div>
+      <div class="hero-chip"><span class="dot-gold"></span> CodeChef 2★</div>
+      <div class="hero-chip"><span class="dot-gold"></span> HackerRank 3★ Problem Solving</div>
+      <div class="hero-chip"><span class="dot-gold"></span> SIH Participant</div>
+      <div class="hero-chip"><span class="dot-gold"></span> 3 End-to-End Deployed Projects</div>
+    </div>
+    <div class="hero-contact">
+      <span>✉ divyanshushahiyashshahi@gmail.com</span>
+      <span>☎ +91-9838157845</span>
+      <a href="https://linkedin.com/in/divyansu-shahi-yash-712463317" target="_blank">🔗 LinkedIn</a>
+      <span>📍 Maharajganj, Uttar Pradesh</span>
+    </div>
+  </div>
+</header>
+
+<!-- ╔══ STICKY NAV ══╗ -->
+<nav class="nav-bar">
+  <div class="nav-inner">
+    <a class="nav-a" href="#s1">Cover Letter</a>
+    <a class="nav-a" href="#s2">Recruiter Email</a>
+    <a class="nav-a" href="#s3">HM Email</a>
+    <a class="nav-a" href="#s4">LinkedIn DM</a>
+    <a class="nav-a" href="#s5">Referral</a>
+    <a class="nav-a" href="#s6">Follow-Up</a>
+    <a class="nav-a" href="#s7">30-Sec Intro</a>
+    <a class="nav-a" href="#s8">Job Titles</a>
+    <a class="nav-a" href="#s9">Key Strengths</a>
+    <a class="nav-a" href="#s10">Skill Gap</a>
+    <a class="nav-a" href="#s11">Personal Brand</a>
+    <a class="nav-a" href="#s12">Interview</a>
+  </div>
+</nav>
+
+<!-- ╔══ MAIN ══╗ -->
+<main class="main">
+
+  <!-- ─── S1: Cover Letter ─── -->
+  <div class="card" id="s1">
+    <div class="card-head">
+      <div class="sec-num">01</div>
+      <div>
+        <div class="sec-title">ATS-Friendly Cover Letter</div>
+        <div class="sec-sub">350–450 words · Tailored for Data Analyst Intern · ATS + human-reader optimized</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="ebox">
+        <div class="ebox-head">
+          <span class="ebox-subj">Subject: Application for Data Analyst Intern — Divyansu Shahi | Python · Pandas · ML · FastAPI | CGPA 8.16</span>
+          <button class="copy-btn" onclick="cp('cl',this)">Copy</button>
+        </div>
+        <div class="ebox-body" id="cl">June 2025
+
+Dear Hiring Manager,
+
+I am Divyansu Shahi, a second-year B.Tech Computer Science undergraduate specializing in Data Science at ABES Engineering College, Ghaziabad (CGPA: 8.16), applying for the Data Analyst Intern position at [Company Name]. My hands-on experience in Python-based data analytics, machine learning deployment, and data visualization aligns directly with the analytical demands of this role — and I am eager to bring that work into a professional setting.
+
+My most technically rigorous project to date is the Customer Churn Prediction API — a FastAPI-based REST endpoint that serves a trained classification model for real-time predictions. This project covered the complete data science lifecycle: Pandas data preprocessing, NumPy feature engineering, scikit-learn model training, and API deployment — making it production-style work, not merely an academic notebook.
+
+My Customer Segmentation project applied unsupervised clustering to identify distinct behavioral cohorts from transactional data, translating raw patterns into targeted, actionable business insights. Together, these projects demonstrate practical fluency across both supervised and unsupervised machine learning paradigms.
+
+My Green City AQI Monitoring Dashboard further reflects my comfort with real-world, messy datasets. I processed multi-source environmental data using Pandas, conducted time-series analysis to identify seasonal pollution trends and peak AQI hours, and built interactive Matplotlib and JavaScript visualizations accessible to non-technical audiences. This project is aligned with SDG Goals 11 and 13 — a reflection of my conviction that data analysis should drive meaningful, real-world impact.
+
+Complementing my project work, I hold a CodeChef 2-Star rating and a HackerRank 3-Star in Problem Solving, with consistent practice across arrays, recursion, dynamic programming, and graph traversal in C++ and Python. As a Smart India Hackathon (SIH) participant, I have also experienced high-pressure, team-based product delivery with strict time constraints — directly mirroring the sprint pace of a professional analytics team.
+
+My core technical stack includes Python, Pandas, NumPy, Matplotlib, FastAPI, Git, and GitHub. My additional web development skills in HTML5, CSS3, and JavaScript enable me to present data insights through interactive interfaces independently.
+
+I am eager to bring this combination of analytical depth, self-driven initiative, and practical project delivery to [Company Name]'s data team — whether in exploratory analysis, dashboard development, or data pipeline support.
+
+Thank you for your consideration. My resume is attached, and I would welcome a conversation at your earliest convenience.
+
+Warm regards,
+Divyansu Shahi
+divyanshushahiyashshahi@gmail.com | +91-9838157845
+linkedin.com/in/divyansu-shahi-yash-712463317</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── S2: Recruiter Email ─── -->
+  <div class="card" id="s2">
+    <div class="card-head">
+      <div class="sec-num">02</div>
+      <div>
+        <div class="sec-title">Recruiter Outreach Email</div>
+        <div class="sec-sub">Brief · Punchy · Scannable — engineered for busy recruiters on LinkedIn/email</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="ebox">
+        <div class="ebox-head">
+          <span class="ebox-subj">Subject: Data Analyst Intern | Python · Pandas · ML · FastAPI | CGPA 8.16 | ABES Engineering</span>
+          <button class="copy-btn" onclick="cp('re',this)">Copy</button>
+        </div>
+        <div class="ebox-body" id="re">Hi [Recruiter Name],
+
+I came across your profile on LinkedIn and noticed you work with data and tech talent — reaching out to share my profile in case it's relevant to any open roles.
+
+I'm Divyansu Shahi, a 2nd-year B.Tech CSE (Data Science) student at ABES Engineering College (CGPA: 8.16), actively seeking a Data Analyst Intern opportunity — open to remote, hybrid, or on-site.
+
+Quick snapshot:
+
+→ Tech Stack: Python · Pandas · NumPy · Matplotlib · FastAPI · scikit-learn · Git · HTML/CSS/JS
+→ Projects:
+   • Customer Churn Prediction API — FastAPI REST endpoint + scikit-learn classification model (end-to-end ML deployment)
+   • Customer Segmentation — unsupervised clustering to identify behavioral customer cohorts
+   • Green City AQI Dashboard — time-series analysis on real env. datasets + interactive visualization
+→ Competitive: CodeChef 2★ · HackerRank 3★ (Problem Solving) · SIH Participant
+
+I've independently built and deployed end-to-end data science projects — from preprocessing and modeling to visualization and API delivery. I'm ready to bring that same initiative to a professional analytics team.
+
+Would you be open to sharing relevant openings or connecting briefly? I'd genuinely value your guidance.
+
+Resume attached. Thank you for your time!
+
+Best regards,
+Divyansu Shahi
++91-9838157845 | divyanshushahiyashshahi@gmail.com
+linkedin.com/in/divyansu-shahi-yash-712463317</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── S3: Hiring Manager Email ─── -->
+  <div class="card" id="s3">
+    <div class="card-head">
+      <div class="sec-num">03</div>
+      <div>
+        <div class="sec-title">Hiring Manager Email</div>
+        <div class="sec-sub">Direct · Project-led · Results-oriented — speaks to what managers actually care about</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="ebox">
+        <div class="ebox-head">
+          <span class="ebox-subj">Subject: Data Analyst Intern Application — Python, ML & FastAPI | CGPA 8.16 | ABES Engineering College</span>
+          <button class="copy-btn" onclick="cp('hm',this)">Copy</button>
+        </div>
+        <div class="ebox-body" id="hm">Dear [Hiring Manager's Name],
+
+I am Divyansu Shahi, a second-year B.Tech CSE (Data Science) student at ABES Engineering College, Ghaziabad (CGPA: 8.16), writing to express strong interest in a Data Analyst Intern role at [Company Name].
+
+Over the past year, I have independently built three end-to-end data projects:
+
+1. Customer Churn Prediction API — A FastAPI REST endpoint serving a trained classification model. Covered full lifecycle: Pandas/NumPy preprocessing, scikit-learn model training, and API deployment for real-time inference.
+
+2. Customer Segmentation Project — Applied unsupervised clustering algorithms to segment customers by behavioral patterns, translating data into actionable cohorts for business decision-making.
+
+3. Green City AQI Monitoring Dashboard — Processed real environmental datasets with Pandas, conducted time-series trend analysis, and built interactive Matplotlib + JavaScript visualizations for both technical and public audiences. Aligned with SDG Goals 11 & 13.
+
+I also hold a CodeChef 2-Star rating and a HackerRank 3-Star in Problem Solving, and participated in the Smart India Hackathon (SIH) — where I delivered a functional prototype under time pressure as part of a cross-functional team.
+
+I'm a strong fit for data analyst intern responsibilities including EDA, dashboard development, data cleaning, and reporting support. My resume is attached, and I would be glad to discuss how my background aligns with your team's current goals.
+
+Thank you for your time and consideration.
+
+Warm regards,
+Divyansu Shahi
+divyanshushahiyashshahi@gmail.com | +91-9838157845
+linkedin.com/in/divyansu-shahi-yash-712463317</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── S4: LinkedIn ─── -->
+  <div class="card" id="s4">
+    <div class="card-head">
+      <div class="sec-num">04</div>
+      <div>
+        <div class="sec-title">LinkedIn Connection Request</div>
+        <div class="sec-sub">≤ 300 characters · Personal, specific, easy to accept</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="ebox">
+        <div class="ebox-head">
+          <span class="ebox-subj">LinkedIn Note (≤ 300 characters)</span>
+          <button class="copy-btn" onclick="cp('li',this)">Copy</button>
+        </div>
+        <div class="ebox-body" id="li">Hi [Name]! I'm Divyansu — 2nd-year CSE (Data Science) at ABES Engineering (CGPA 8.16). I build Python & ML projects (Churn Prediction API, AQI Dashboard) and am actively seeking Data Analyst Intern roles. Would love to connect and learn from your journey!</div>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:8px;font-family:'JetBrains Mono',monospace;">✓ ~235 characters · Well within LinkedIn's 300-character limit</p>
+    </div>
+  </div>
+
+  <!-- ─── S5: Referral Request ─── -->
+  <div class="card" id="s5">
+    <div class="card-head">
+      <div class="sec-num">05</div>
+      <div>
+        <div class="sec-title">Referral Request Message</div>
+        <div class="sec-sub">Warm · Respectful · Zero pressure — maximizes the chance of a yes</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="ebox">
+        <div class="ebox-head">
+          <span class="ebox-subj">Subject: Quick Ask — Referral for Data Analyst Intern at [Company Name]</span>
+          <button class="copy-btn" onclick="cp('rf',this)">Copy</button>
+        </div>
+        <div class="ebox-body" id="rf">Hi [Name],
+
+Hope you're doing well! I'm Divyansu Shahi — a 2nd-year B.Tech CSE (Data Science) student at ABES Engineering College with a CGPA of 8.16. I noticed that [Company Name] is hiring for a Data Analyst Intern role, and since you work there, I wanted to reach out.
+
+A quick look at my profile:
+→ Built a Customer Churn Prediction API using FastAPI + scikit-learn (end-to-end ML deployment)
+→ Developed a Customer Segmentation project and a Green City AQI Dashboard (Python, Pandas, Matplotlib)
+→ CodeChef 2★ · HackerRank 3★ (Problem Solving) · Smart India Hackathon Participant
+→ CGPA: 8.16 at ABES Engineering College, Ghaziabad
+
+If you're comfortable, a referral from you would significantly increase my visibility with the hiring team — and I'd truly appreciate it. I've attached my resume for your reference.
+
+Absolutely no pressure if this isn't possible — any advice about the team or the role would also be incredibly helpful!
+
+Thank you so much for your time.
+
+Warm regards,
+Divyansu Shahi
+divyanshushahiyashshahi@gmail.com | +91-9838157845
+linkedin.com/in/divyansu-shahi-yash-712463317</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── S6: Follow-Up ─── -->
+  <div class="card" id="s6">
+    <div class="card-head">
+      <div class="sec-num">06</div>
+      <div>
+        <div class="sec-title">Follow-Up Email</div>
+        <div class="sec-sub">Send after 5 business days of silence · Brief, professional, non-pushy</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="ebox">
+        <div class="ebox-head">
+          <span class="ebox-subj">Subject: Following Up — Data Analyst Intern Application | Divyansu Shahi</span>
+          <button class="copy-btn" onclick="cp('fu',this)">Copy</button>
+        </div>
+        <div class="ebox-body" id="fu">Dear [Hiring Manager / Recruiter Name],
+
+I hope this message finds you well. I'm following up on my application for the Data Analyst Intern position at [Company Name], submitted on [Date].
+
+I remain genuinely enthusiastic about this opportunity. To briefly reiterate my relevance — I have independently built a Customer Churn Prediction API (FastAPI + scikit-learn), a Customer Segmentation project using clustering, and a Green City AQI Dashboard using Python and Pandas. My CGPA is 8.16, and I hold competitive programming credentials on CodeChef (2★) and HackerRank (3★ Problem Solving).
+
+I understand your team is evaluating multiple candidates and I appreciate the time this requires. I'd be happy to answer any questions, provide code samples, or discuss my projects further if that would help in your evaluation.
+
+Looking forward to hearing from you at your convenience.
+
+Thank you for your consideration.
+
+Best regards,
+Divyansu Shahi
+divyanshushahiyashshahi@gmail.com | +91-9838157845
+linkedin.com/in/divyansu-shahi-yash-712463317</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── S7: 30-Second Intro ─── -->
+  <div class="card" id="s7">
+    <div class="card-head">
+      <div class="sec-num">07</div>
+      <div>
+        <div class="sec-title">30-Second Professional Introduction</div>
+        <div class="sec-sub">For interviews, networking events & career fairs — memorize, then make it your own</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="script-box">
+        <p>"Hi, I'm <strong>Divyansu Shahi</strong> — a second-year B.Tech Computer Science student specializing in <span class="script-hl">Data Science</span> at ABES Engineering College, where I hold a CGPA of 8.16.</p>
+        <br>
+        <p>I work with <span class="script-hl">Python, Pandas, and machine learning</span> to build data-driven solutions. I've independently delivered three end-to-end projects: a <strong>Customer Churn Prediction API</strong> using FastAPI and scikit-learn, a <strong>Customer Segmentation</strong> project using clustering, and a <strong>Green City AQI Dashboard</strong> that processes real environmental data to generate actionable public health insight.</p>
+        <br>
+        <p>I'm a <span class="script-hl">CodeChef 2-Star coder</span>, a <span class="script-hl">HackerRank 3-Star Problem Solver</span>, and a <strong>Smart India Hackathon participant</strong> — which has sharpened my ability to deliver under pressure and collaborate across teams.</p>
+        <br>
+        <p>I'm currently looking for a <strong>Data Analyst Intern</strong> role where I can bring this hands-on experience to a team solving real business problems with data.</p>
+        <br>
+        <p>I'd love to hear more about what your team is working on — and explore whether my background might be a fit."</p>
+      </div>
+      <p style="font-size:12px;color:var(--muted);margin-top:10px;font-family:'JetBrains Mono',monospace;">
+        ⏱ ~28–32 seconds at a comfortable pace &nbsp;|&nbsp; Swap [Company Name] for each event &nbsp;|&nbsp; Pause after each paragraph
+      </p>
+    </div>
+  </div>
+
+  <!-- ─── S8: Job Titles ─── -->
+  <div class="card" id="s8">
+    <div class="card-head">
+      <div class="sec-num">08</div>
+      <div>
+        <div class="sec-title">Top 10 Job Titles Best Suited for Your Profile</div>
+        <div class="sec-sub">Ranked by profile-to-role fit strength — use these as your primary search keywords</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="job-row"><div class="job-n">01</div><span class="job-title-text">Data Analyst Intern</span><span class="badge b-hi">⬆ Core Match</span></div>
+      <div class="job-row"><div class="job-n">02</div><span class="job-title-text">Data Science Intern</span><span class="badge b-hi">⬆ Core Match</span></div>
+      <div class="job-row"><div class="job-n">03</div><span class="job-title-text">Machine Learning Intern</span><span class="badge b-hi">⬆ Core Match</span></div>
+      <div class="job-row"><div class="job-n">04</div><span class="job-title-text">Python Developer Intern</span><span class="badge b-hi">⬆ Core Match</span></div>
+      <div class="job-row"><div class="job-n">05</div><span class="job-title-text">Business Intelligence (BI) Intern</span><span class="badge b-med">◆ Strong Fit</span></div>
+      <div class="job-row"><div class="job-n">06</div><span class="job-title-text">Analytics Engineering Intern</span><span class="badge b-med">◆ Strong Fit</span></div>
+      <div class="job-row"><div class="job-n">07</div><span class="job-title-text">Junior Data Engineer Intern</span><span class="badge b-med">◆ Strong Fit</span></div>
+      <div class="job-row"><div class="job-n">08</div><span class="job-title-text">Research Analyst Intern (Tech / Environmental)</span><span class="badge b-med">◆ Strong Fit</span></div>
+      <div class="job-row"><div class="job-n">09</div><span class="job-title-text">Full-Stack Developer Intern (Data Applications)</span><span class="badge b-med">◆ Strong Fit</span></div>
+      <div class="job-row"><div class="job-n">10</div><span class="job-title-text">Software Development Intern (Python / Backend)</span><span class="badge b-med">◆ Strong Fit</span></div>
+    </div>
+  </div>
+
+  <!-- ─── S9: Key Strengths ─── -->
+  <div class="card" id="s9">
+    <div class="card-head">
+      <div class="sec-num">09</div>
+      <div>
+        <div class="sec-title">Key Strengths Recruiters Will Notice</div>
+        <div class="sec-sub">What makes your profile stand out in the second-year, early-talent market</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="str-row">
+        <div class="str-icon">🔬</div>
+        <div>
+          <div class="str-label">End-to-End ML Deployment via FastAPI</div>
+          <div class="str-desc">Built and deployed a Customer Churn Prediction REST API — rare at the second-year undergraduate level. Signals full-stack data science thinking, not just model-building in a notebook.</div>
+        </div>
+      </div>
+      <div class="str-row">
+        <div class="str-icon">📊</div>
+        <div>
+          <div class="str-label">Real-World Dataset Experience</div>
+          <div class="str-desc">Processed genuine environmental (AQI) and business (churn, segmentation) datasets — not synthetic tutorial data — with hands-on handling of missing values, normalization, and time-series patterns.</div>
+        </div>
+      </div>
+      <div class="str-row">
+        <div class="str-icon">🏆</div>
+        <div>
+          <div class="str-label">Competitive Programming Foundation</div>
+          <div class="str-desc">CodeChef 2★ and HackerRank 3★ signal strong algorithmic instincts — which translate directly into writing efficient data pipelines, debugging complex workflows, and writing clean, optimized code.</div>
+        </div>
+      </div>
+      <div class="str-row">
+        <div class="str-icon">🤝</div>
+        <div>
+          <div class="str-label">Smart India Hackathon (SIH) Delivery Experience</div>
+          <div class="str-desc">SIH participation reflects the ability to build and present a working prototype under tight deadlines in a cross-functional team — directly mirroring the sprint cadence of professional analytics teams.</div>
+        </div>
+      </div>
+      <div class="str-row">
+        <div class="str-icon">🌱</div>
+        <div>
+          <div class="str-label">ESG & SDG-Aligned Project Portfolio</div>
+          <div class="str-desc">Green City AQI Dashboard is aligned with UN SDG Goals 11 & 13. ESG-oriented candidates are increasingly valued at companies with sustainability mandates, impact funds, and CSR reporting requirements.</div>
+        </div>
+      </div>
+      <div class="str-row">
+        <div class="str-icon">📐</div>
+        <div>
+          <div class="str-label">Data Visualization for Non-Technical Audiences</div>
+          <div class="str-desc">Built dashboards designed for non-technical public users — a critical analyst skill for bridging the gap between raw data and business stakeholders who make decisions based on your output.</div>
+        </div>
+      </div>
+      <div class="str-row">
+        <div class="str-icon">🚀</div>
+        <div>
+          <div class="str-label">3 Independent End-to-End Projects as a 2nd-Year Student</div>
+          <div class="str-desc">Delivered three projects independently and without a team or mentor-led guidance — a strong signal of initiative, self-organization, and the ability to execute autonomously that's rare this early in a degree.</div>
+        </div>
+      </div>
+      <div class="str-row">
+        <div class="str-icon">📚</div>
+        <div>
+          <div class="str-label">Strong Academic Foundation Across Core CS Subjects</div>
+          <div class="str-desc">CGPA 8.16 across DSA, DBMS, OOP, Machine Learning, and Data Science Fundamentals — demonstrating theoretical depth that reinforces, rather than competes with, practical project experience.</div>
+        </div>
+      </div>
+      <div class="str-row">
+        <div class="str-icon">🔗</div>
+        <div>
+          <div class="str-label">Full-Stack Awareness (Python Backend + HTML/CSS/JS)</div>
+          <div class="str-desc">Can build both data pipelines and interactive web interfaces — enabling end-to-end deployment of data-facing products without depending on a separate frontend developer.</div>
+        </div>
+      </div>
+      <div class="str-row">
+        <div class="str-icon">🔄</div>
+        <div>
+          <div class="str-label">Supervised + Unsupervised Learning Breadth</div>
+          <div class="str-desc">Applied classification (churn), clustering (segmentation), and regression fundamentals — providing ML breadth across paradigms that goes well beyond basic tutorial-level exposure.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── S10: Skill Gap ─── -->
+  <div class="card" id="s10">
+    <div class="card-head">
+      <div class="sec-num">10</div>
+      <div>
+        <div class="sec-title">Skill Gap Analysis</div>
+        <div class="sec-sub">Current strengths · Missing skills · 6-month prioritized learning roadmap</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="two-col">
+        <div class="col-block">
+          <div class="col-block-title">✅ Current Strengths</div>
+          <ul class="blist">
+            <li>Python — Pandas, NumPy, Matplotlib</li>
+            <li>Machine Learning (scikit-learn basics)</li>
+            <li>FastAPI — ML model deployment</li>
+            <li>Data Preprocessing & Cleaning</li>
+            <li>Time-Series Analysis (AQI project)</li>
+            <li>DSA — competitive programming level</li>
+            <li>Git & GitHub version control</li>
+            <li>HTML5 / CSS3 / JavaScript</li>
+            <li>Data Visualization (Matplotlib + JS)</li>
+            <li>OOP & DBMS fundamentals (coursework)</li>
+          </ul>
+        </div>
+        <div class="col-block">
+          <div class="col-block-title">⚠️ Missing Skills — Priority Order</div>
+          <ul class="blist">
+            <li>SQL / PostgreSQL — critical for DA roles</li>
+            <li>Statistics (hypothesis testing, A/B testing)</li>
+            <li>Power BI or Tableau — industry BI tools</li>
+            <li>Excel / Google Sheets analytics</li>
+            <li>Scikit-learn — deeper model proficiency</li>
+            <li>Cloud basics (BigQuery, AWS S3)</li>
+            <li>Kaggle-quality notebook documentation</li>
+            <li>Data storytelling & stakeholder comms</li>
+          </ul>
+        </div>
+      </div>
+
+      <span class="lbl">Proficiency Self-Assessment</span>
+      <div style="margin-bottom:22px;">
+        <div class="sb-row"><div class="sb-head"><span class="sb-name">Python (Pandas, NumPy, Matplotlib)</span><span class="sb-pct">80%</span></div><div class="sb-bg"><div class="sb-fill bar-b" style="width:80%"></div></div></div>
+        <div class="sb-row"><div class="sb-head"><span class="sb-name">DSA & Algorithms (C++ / Python)</span><span class="sb-pct">75%</span></div><div class="sb-bg"><div class="sb-fill bar-b" style="width:75%"></div></div></div>
+        <div class="sb-row"><div class="sb-head"><span class="sb-name">Data Visualization (Matplotlib, JS charts)</span><span class="sb-pct">70%</span></div><div class="sb-bg"><div class="sb-fill bar-b" style="width:70%"></div></div></div>
+        <div class="sb-row"><div class="sb-head"><span class="sb-name">Machine Learning Basics (scikit-learn)</span><span class="sb-pct">65%</span></div><div class="sb-bg"><div class="sb-fill bar-b" style="width:65%"></div></div></div>
+        <div class="sb-row"><div class="sb-head"><span class="sb-name">FastAPI / Backend Deployment</span><span class="sb-pct">60%</span></div><div class="sb-bg"><div class="sb-fill bar-b" style="width:60%"></div></div></div>
+        <div class="sb-row"><div class="sb-head"><span class="sb-name">SQL / Database Querying</span><span class="sb-pct">25%</span></div><div class="sb-bg"><div class="sb-fill bar-g" style="width:25%"></div></div></div>
+        <div class="sb-row"><div class="sb-head"><span class="sb-name">Statistics & Probability</span><span class="sb-pct">35%</span></div><div class="sb-bg"><div class="sb-fill bar-g" style="width:35%"></div></div></div>
+        <div class="sb-row"><div class="sb-head"><span class="sb-name">Tableau / Power BI</span><span class="sb-pct">10%</span></div><div class="sb-bg"><div class="sb-fill bar-r" style="width:10%"></div></div></div>
+        <div class="sb-row"><div class="sb-head"><span class="sb-name">Cloud Analytics (BigQuery / AWS)</span><span class="sb-pct">10%</span></div><div class="sb-bg"><div class="sb-fill bar-r" style="width:10%"></div></div></div>
+      </div>
+
+      <span class="lbl">6-Month Prioritized Learning Roadmap</span>
+      <div class="rm-row">
+        <div class="rm-mo">Month 1</div>
+        <div><div class="rm-title">SQL — Fundamentals to Intermediate</div><div class="rm-desc">HackerRank SQL Track · Mode Analytics SQL Tutorial · W3Schools SQL. Master: SELECT, JOINs, GROUP BY, subqueries, window functions. Deliverable: mini SQL project on a public Kaggle dataset.</div></div>
+      </div>
+      <div class="rm-row">
+        <div class="rm-mo">Month 2</div>
+        <div><div class="rm-title">Statistics for Data Analysts</div><div class="rm-desc">Khan Academy Statistics · StatQuest with Josh Starmer (YouTube). Cover: probability distributions, hypothesis testing, p-values, confidence intervals, and A/B testing basics.</div></div>
+      </div>
+      <div class="rm-row">
+        <div class="rm-mo">Month 3</div>
+        <div><div class="rm-title">Tableau or Power BI (Choose One)</div><div class="rm-desc">Tableau Public (free tier) official tutorials OR Microsoft Learn Power BI. Build 2 interactive dashboards from public datasets. Publish on Tableau Public for your portfolio.</div></div>
+      </div>
+      <div class="rm-row">
+        <div class="rm-mo">Month 4</div>
+        <div><div class="rm-title">Scikit-learn Deep Dive + Kaggle Projects</div><div class="rm-desc">Complete 2 end-to-end Kaggle notebooks with detailed EDA, feature engineering, model selection, and evaluation metrics. Focus on publication-quality documentation with narrative commentary.</div></div>
+      </div>
+      <div class="rm-row">
+        <div class="rm-mo">Month 5</div>
+        <div><div class="rm-title">Excel / Google Sheets for Analysts</div><div class="rm-desc">Pivot tables, VLOOKUP, INDEX-MATCH, conditional formatting, data validation. Cover spreadsheet-based reporting workflows that remain ubiquitous in business analytics environments.</div></div>
+      </div>
+      <div class="rm-row">
+        <div class="rm-mo">Month 6</div>
+        <div><div class="rm-title">Cloud Analytics Basics (Google BigQuery Free Tier)</div><div class="rm-desc">Run SQL queries on public GCP datasets via BigQuery sandbox. Build a Google Looker Studio dashboard. Optional: AWS S3 basics for data lake concepts. Add 1 cloud project to GitHub.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── S11: Personal Brand ─── -->
+  <div class="card" id="s11">
+    <div class="card-head">
+      <div class="sec-num">11</div>
+      <div>
+        <div class="sec-title">Personal Brand Summary</div>
+        <div class="sec-sub">Unique value proposition · Positioning statement · LinkedIn headlines · Brand pillars</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="brand-blk" style="background:var(--gold-faint);border:1px solid #FDE68A;">
+        <div class="brand-blk-title" style="color:#92400E;">🌟 Unique Value Proposition</div>
+        <div class="brand-blk-body" style="color:#78350F;">A self-driven data science undergraduate who builds production-style, impact-oriented analytics projects <em>independently</em> — from FastAPI-deployed ML models to real-world environmental dashboards — while maintaining a CGPA of 8.16 and competing actively on CodeChef and HackerRank. I bridge data analysis, machine learning deployment, and interactive web visualization, making me an unusually capable early-career candidate who doesn't need a team to get things shipped.</div>
+      </div>
+
+      <div class="brand-blk" style="background:var(--blue-faint);border:1px solid #BFDBFE;">
+        <div class="brand-blk-title" style="color:var(--blue);">🎯 Professional Positioning Statement</div>
+        <div class="brand-blk-body" style="color:var(--navy);">"Data Science undergraduate with hands-on Python, Pandas, and FastAPI experience — independently building end-to-end analytics projects from raw data to deployed inference, with a focus on turning messy real-world datasets into clear, actionable insight for both technical and non-technical audiences."</div>
+      </div>
+
+      <span class="lbl">LinkedIn Headline Options — pick the best fit for your audience</span>
+
+      <div class="hl-box">
+        <span class="hb">Option A — Skill-Forward (great for ATS):</span><br>
+        Data Analyst Intern Seeker | Python · Pandas · ML · FastAPI | Churn Prediction API | AQI Dashboard | CodeChef 2★ | HackerRank 3★ | CGPA 8.16 | ABES Engineering
+      </div>
+
+      <div class="hl-box">
+        <span class="hb">Option B — Role-Forward (great for humans):</span><br>
+        B.Tech CSE (Data Science) @ ABES Engineering | Building Data-Driven Products with Python & ML | Data Analyst Intern | SIH Participant | CGPA 8.16
+      </div>
+
+      <div class="hl-box">
+        <span class="hb">Option C — Impact-Forward ★ Recommended:</span><br>
+        Turning Real-World Data into Impact | Python · FastAPI · ML | Churn Prediction API · AQI Dashboard · Customer Segmentation | Data Science @ ABES Engineering | CGPA 8.16
+      </div>
+
+      <div class="divider"></div>
+      <span class="lbl">Core Brand Pillars — repeat these consistently across all platforms</span>
+      <div class="tags-row">
+        <span class="tag t-bl">Python-First Analyst</span>
+        <span class="tag t-bl">ML Deployment (FastAPI)</span>
+        <span class="tag t-bl">End-to-End Project Ownership</span>
+        <span class="tag t-gd">Impact-Oriented Tech</span>
+        <span class="tag t-gd">Environmental Data Science</span>
+        <span class="tag t-gr">Self-Driven Learner</span>
+        <span class="tag t-gr">Competitive Programmer</span>
+        <span class="tag t-nv">SIH Participant</span>
+        <span class="tag t-nv">CGPA 8.16</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── S12: Interview ─── -->
+  <div class="card" id="s12">
+    <div class="card-head">
+      <div class="sec-num">12</div>
+      <div>
+        <div class="sec-title">Interview Talking Points</div>
+        <div class="sec-sub">Key stories to own · Anticipated questions · How to frame your profile</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <span class="lbl" style="margin-bottom:12px;">🏆 Your 4 Most Impressive Achievements — Lead With These</span>
+
+      <div class="iw-item">
+        <div class="iw-q">Achievement 1 — Customer Churn Prediction API (FastAPI + scikit-learn)</div>
+        <div class="iw-a">Frame it as: <em>"I built a FastAPI-based REST endpoint that serves a trained classification model in real time. The project covered the full ML lifecycle — Pandas preprocessing, NumPy feature engineering, scikit-learn model training, and API deployment. It's production-style data science work — not just a notebook exercise. I built this independently as a first-year student."</em></div>
+      </div>
+
+      <div class="iw-item">
+        <div class="iw-q">Achievement 2 — Green City AQI Monitoring Dashboard</div>
+        <div class="iw-a">Frame it as: <em>"I processed real environmental datasets, identified seasonal pollution trends and peak AQI hours through time-series analysis in Pandas, and built visualizations in Matplotlib and JavaScript that make the data meaningful to non-technical public users. It directly supports SDG Goals 11 and 13 — sustainability-aligned data work at the student level."</em></div>
+      </div>
+
+      <div class="iw-item">
+        <div class="iw-q">Achievement 3 — Customer Segmentation Project (Unsupervised ML)</div>
+        <div class="iw-a">Frame it as: <em>"I applied clustering algorithms to segment customers by behavioral patterns — the kind of analysis businesses use to personalize marketing and pricing. It's a direct business application of unsupervised learning, not just an academic clustering demo. I translated the cluster outputs into descriptive, actionable cohort profiles."</em></div>
+      </div>
+
+      <div class="iw-item">
+        <div class="iw-q">Achievement 4 — CodeChef 2★ + HackerRank 3★ + SIH Participation</div>
+        <div class="iw-a">Frame it as: <em>"My competitive programming practice in C++ and Python — arrays, recursion, DP, graph traversal — keeps my problem-solving instincts sharp and carries directly into writing efficient data pipelines. SIH gave me the experience of building and pitching a working prototype under a tight deadline with a cross-functional team — which mirrors how real analytics sprints work."</em></div>
+      </div>
+
+      <div class="divider"></div>
+      <span class="lbl" style="margin-bottom:12px;">💬 Anticipated Interview Questions & Model Answers</span>
+
+      <div class="iw-item">
+        <div class="iw-q">Q: "Tell me about a project you're most proud of."</div>
+        <div class="iw-a">→ Lead with the Churn Prediction API. Describe the business problem (predicting which customers will churn), your technical approach (classification via scikit-learn), and the delivery (FastAPI REST endpoint). Emphasize that it's end-to-end and deployed — not just a Jupyter notebook.</div>
+      </div>
+
+      <div class="iw-item">
+        <div class="iw-q">Q: "How did you handle messy or missing data?"</div>
+        <div class="iw-a">→ Reference the AQI Dashboard. Describe: using Pandas fillna/dropna strategies contextually, normalizing pollutant readings across inconsistent sensor sources, and applying time-series smoothing to reduce noise in the trend visualization output.</div>
+      </div>
+
+      <div class="iw-item">
+        <div class="iw-q">Q: "Explain the difference between classification and clustering."</div>
+        <div class="iw-a">→ Connect directly to your own work: <em>"In my Churn Prediction API, I used classification — a supervised approach where I predicted a labeled binary outcome (churn or not). In my Customer Segmentation project, I used clustering — unsupervised, where the algorithm discovered groupings from the data structure itself without predefined labels."</em></div>
+      </div>
+
+      <div class="iw-item">
+        <div class="iw-q">Q: "Do you know SQL?"</div>
+        <div class="iw-a">→ Be direct: <em>"I have foundational SQL from my DBMS coursework and can write SELECT, JOIN, GROUP BY, and subqueries today. SQL is the top priority on my current learning roadmap — I'm actively working through HackerRank's SQL track to reach window functions and query optimization within the next 4 weeks."</em></div>
+      </div>
+
+      <div class="iw-item">
+        <div class="iw-q">Q: "Why data analytics over software development?"</div>
+        <div class="iw-a">→ <em>"When I built the AQI Dashboard, I realized that the right analysis of the right data can directly influence decisions that affect public health. I want to be the person who transforms raw numbers into the insight that drives a real business or policy decision — not just a developer building features. That's what pulled me toward data."</em></div>
+      </div>
+
+      <div class="iw-item">
+        <div class="iw-q">Q: "Why should we pick you over other interns?"</div>
+        <div class="iw-a">→ <em>"Most second-year students have assignments and tutorials. I have deployed projects. I've independently built an ML API, a segmentation model, and a live dashboard — without a team, without a mentor's roadmap, and while maintaining a CGPA of 8.16. I bring initiative and real delivery discipline from day one — not just potential."</em></div>
+      </div>
+
+      <div class="iw-item">
+        <div class="iw-q">Q: "Where do you see yourself in 3–5 years?"</div>
+        <div class="iw-a">→ <em>"I'm building toward a Data Scientist or ML Engineer role — someone who can take a business problem, architect the full data solution, and deploy it end-to-end. This internship would be the foundation for that path. I'm particularly drawn to [Company's domain] because of [specific reason] — which is exactly the kind of problem I want to be solving with data at scale."</em></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  Divyansu Shahi &nbsp;·&nbsp; Job Search Toolkit 2025 &nbsp;·&nbsp; Personalized for Data Analyst Intern Applications &nbsp;·&nbsp; Powered by Claude AI
+</footer>
+
+<script>
+  function cp(id, btn) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const text = el.innerText || el.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      done(btn);
+    }).catch(() => {
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        done(btn);
+      } catch(e) { console.error('Copy failed', e); }
+    });
+  }
+  function done(btn) {
+    btn.textContent = '✓ Copied!';
+    btn.classList.add('ok');
+    setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.classList.remove('ok');
+    }, 2500);
+  }
+</script>
+</body>
+</html>
