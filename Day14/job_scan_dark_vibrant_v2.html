@@ -1,0 +1,266 @@
+
+<h2 class="sr-only">Job opportunity analysis for TechNova Analytics Data Analyst Intern — overall score 62 out of 100, verdict: strong opportunity worth applying to.</h2>
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.root { background: #0D0F1A; border-radius: 16px; padding: 24px; font-family: var(--font-sans); color: #E8EAFF; overflow: hidden; }
+.top-bar { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; }
+.pill { font-size: 10px; font-weight: 500; letter-spacing: .1em; padding: 3px 10px; border-radius: 99px; }
+.pill-live { background: #1A3A2A; color: #4ADE80; border: 0.5px solid #2A5A3A; }
+.pill-role { background: #1A1F3A; color: #818CF8; border: 0.5px solid #2A2F5A; }
+.company-name { font-size: 14px; font-weight: 500; color: #E8EAFF; }
+.company-sub { font-size: 12px; color: #6B7280; }
+.hero { display: grid; grid-template-columns: 180px 1fr; gap: 14px; margin-bottom: 14px; }
+.score-panel { background: #13162A; border-radius: 12px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 6px; border: 0.5px solid #1E2240; }
+.score-ring { position: relative; width: 110px; height: 110px; }
+.score-ring svg { width: 110px; height: 110px; }
+.score-inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.score-big { font-size: 32px; font-weight: 500; color: #E8EAFF; line-height: 1; }
+.score-of { font-size: 11px; color: #6B7280; }
+.verdict-tag { font-size: 11px; font-weight: 500; padding: 4px 12px; border-radius: 99px; background: #1A3A2A; color: #4ADE80; border: 0.5px solid #2D6A3A; margin-top: 4px; }
+.stat-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 10px; }
+.stat-card { background: #13162A; border-radius: 10px; padding: 14px; border: 0.5px solid #1E2240; display: flex; flex-direction: column; gap: 4px; }
+.stat-icon { font-size: 18px; margin-bottom: 2px; }
+.stat-val { font-size: 20px; font-weight: 500; color: #E8EAFF; line-height: 1.1; }
+.stat-label { font-size: 11px; color: #6B7280; }
+.sec-label { font-size: 10px; font-weight: 500; letter-spacing: .1em; color: #4B5563; text-transform: uppercase; margin-bottom: 10px; }
+.flags-card { background: #13162A; border-radius: 12px; padding: 16px; border: 0.5px solid #1E2240; margin-bottom: 14px; }
+.flag-row { display: flex; align-items: center; gap: 10px; margin-bottom: 9px; }
+.flag-row:last-child { margin-bottom: 0; }
+.flag-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.flag-text { font-size: 12px; color: #CBD5E1; flex: 1; line-height: 1.4; }
+.flag-track { width: 60px; height: 4px; background: #1E2240; border-radius: 2px; flex-shrink: 0; }
+.flag-fill { height: 4px; border-radius: 2px; }
+.flag-sev { font-size: 11px; font-weight: 500; min-width: 22px; text-align: right; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+.inner-card { background: #13162A; border-radius: 12px; padding: 16px; border: 0.5px solid #1E2240; }
+.pos-item { display: flex; align-items: flex-start; gap: 8px; margin-bottom: 8px; font-size: 12px; color: #CBD5E1; line-height: 1.4; }
+.pos-icon { font-size: 14px; color: #4ADE80; margin-top: 1px; flex-shrink: 0; }
+.cat-row { display: flex; align-items: center; justify-content: space-between; padding: 7px 0; border-bottom: 0.5px solid #1E2240; }
+.cat-row:last-child { border-bottom: none; }
+.cat-nm { font-size: 12px; color: #CBD5E1; }
+.lv { font-size: 10px; font-weight: 500; padding: 3px 9px; border-radius: 99px; }
+.lv-low { background: #1A3A2A; color: #4ADE80; }
+.lv-med { background: #2A2010; color: #FBBF24; }
+.lv-high { background: #2A1010; color: #F87171; }
+.verdict-banner { background: #0F2A1A; border: 0.5px solid #2D6A3A; border-radius: 12px; padding: 16px 18px; margin-bottom: 14px; display: flex; align-items: center; gap: 14px; }
+.vb-icon { width: 38px; height: 38px; border-radius: 10px; background: #1A4A2A; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+.vb-title { font-size: 15px; font-weight: 500; color: #4ADE80; }
+.vb-sub { font-size: 12px; color: #6B7280; margin-top: 3px; line-height: 1.4; }
+.chart-wrap { position: relative; width: 100%; height: 180px; margin-bottom: 14px; }
+.qs-card { background: #13162A; border-radius: 12px; overflow: hidden; border: 0.5px solid #1E2240; }
+.q-item { border-bottom: 0.5px solid #1A1D30; }
+.q-item:last-child { border-bottom: none; }
+.q-btn { width: 100%; background: none; border: none; padding: 13px 16px; cursor: pointer; display: flex; align-items: flex-start; gap: 10px; text-align: left; }
+.q-btn:hover { background: #161929; }
+.q-num { font-size: 10px; font-weight: 500; padding: 2px 7px; border-radius: 99px; flex-shrink: 0; margin-top: 1px; }
+.q-text { font-size: 12px; color: #CBD5E1; flex: 1; line-height: 1.5; }
+.q-chev { font-size: 15px; color: #4B5563; margin-top: 1px; transition: transform .2s; flex-shrink: 0; }
+.q-chev.open { transform: rotate(180deg); }
+.q-detail { padding: 0 16px 13px calc(16px + 36px); font-size: 12px; color: #6B7280; line-height: 1.6; display: none; }
+.q-detail.open { display: block; }
+.ask-btn { margin-top: 8px; display: inline-block; font-size: 11px; font-weight: 500; padding: 4px 12px; border-radius: 99px; background: #1A1F3A; border: 0.5px solid #2A2F5A; color: #818CF8; cursor: pointer; }
+.ask-btn:hover { background: #20265A; }
+.color-bar { height: 3px; border-radius: 99px; width: 100%; margin-bottom: 14px; display: flex; overflow: hidden; }
+.color-bar span { flex: 1; }
+</style>
+
+<div class="root">
+  <div class="color-bar" aria-hidden="true">
+    <span style="background:#818CF8;"></span>
+    <span style="background:#34D399;"></span>
+    <span style="background:#FBBF24;"></span>
+    <span style="background:#F472B6;"></span>
+    <span style="background:#38BDF8;"></span>
+  </div>
+
+  <div class="top-bar">
+    <span class="pill pill-live">LIVE SCAN</span>
+    <span class="pill pill-role">Data Analyst Intern</span>
+    <div style="margin-left: auto; text-align: right;">
+      <div class="company-name">TechNova Analytics Pvt. Ltd.</div>
+      <div class="company-sub">Remote · India · 6 months · ₹15K/mo</div>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="score-panel">
+      <div class="score-ring">
+        <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Opportunity score 62 out of 100">
+          <circle cx="55" cy="55" r="44" stroke="#1E2240" stroke-width="9"/>
+          <circle id="g-arc" cx="55" cy="55" r="44" stroke="#818CF8" stroke-width="9" stroke-linecap="round" stroke-dasharray="276.5" stroke-dashoffset="276.5" transform="rotate(-90 55 55)"/>
+        </svg>
+        <div class="score-inner">
+          <span class="score-big" id="s-num">0</span>
+          <span class="score-of">/100</span>
+        </div>
+      </div>
+      <div class="verdict-tag">Strong opportunity</div>
+      <div style="font-size:11px; color:#4B5563; margin-top:2px;">worth applying</div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <i class="ti ti-currency-rupee stat-icon" style="color:#34D399;" aria-hidden="true"></i>
+        <div class="stat-val" style="color:#34D399;">₹15K</div>
+        <div class="stat-label">Monthly stipend</div>
+      </div>
+      <div class="stat-card">
+        <i class="ti ti-calendar stat-icon" style="color:#38BDF8;" aria-hidden="true"></i>
+        <div class="stat-val" style="color:#38BDF8;">6 mo</div>
+        <div class="stat-label">Clear duration</div>
+      </div>
+      <div class="stat-card">
+        <i class="ti ti-device-laptop stat-icon" style="color:#F472B6;" aria-hidden="true"></i>
+        <div class="stat-val" style="color:#F472B6;">100%</div>
+        <div class="stat-label">Remote-first</div>
+      </div>
+      <div class="stat-card">
+        <i class="ti ti-trending-up stat-icon" style="color:#FBBF24;" aria-hidden="true"></i>
+        <div class="stat-val" style="color:#FBBF24;">PPO</div>
+        <div class="stat-label">FT offer possible</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-bottom:14px;">
+    <div class="sec-label">Radar — 5 risk dimensions</div>
+    <div class="chart-wrap">
+      <canvas id="radar-chart" role="img" aria-label="Radar chart showing risk scores: Requirements 50, Culture 20, Remote 30, Hiring 45, Company 40">Risk scores — Requirements 50, Culture 20, Remote 30, Hiring 45, Company 40.</canvas>
+    </div>
+  </div>
+
+  <div class="flags-card">
+    <div class="sec-label">Watch-outs (address in interview)</div>
+    <div id="flags-list"></div>
+  </div>
+
+  <div class="two-col">
+    <div class="inner-card">
+      <div class="sec-label">Why this is a good bet</div>
+      <div id="pos-list"></div>
+    </div>
+    <div class="inner-card">
+      <div class="sec-label">Risk breakdown</div>
+      <div id="cat-list"></div>
+    </div>
+  </div>
+
+  <div class="verdict-banner" role="region" aria-label="Final verdict">
+    <div class="vb-icon"><i class="ti ti-rocket" style="font-size:20px; color:#4ADE80;" aria-hidden="true"></i></div>
+    <div>
+      <div class="vb-title">Apply — this one is worth it</div>
+      <div class="vb-sub">Transparent stipend, zero hustle culture, real skills (SQL, Python, Power BI). The unknowns are manageable — ask the 5 questions below before you sign.</div>
+    </div>
+  </div>
+
+  <div class="sec-label" style="margin-bottom:10px;">5 power questions for your interview</div>
+  <div class="qs-card" id="qs-acc"></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const flags = [
+  { text: "PPO criteria undefined — ask for a clear conversion rate and timeline", sev: 7, c: "#F87171" },
+  { text: "Broad tool stack at intern level — clarify which 2-3 you'll actually use daily", sev: 5, c: "#FBBF24" },
+  { text: "Young company (~3-4 yrs) — limited track record, but also early-career upside", sev: 5, c: "#FBBF24" },
+  { text: "Scarce Glassdoor reviews — request a chat with a current intern", sev: 5, c: "#FBBF24" },
+  { text: "No mentorship mentioned — ask who guides you remotely day-to-day", sev: 4, c: "#34D399" },
+  { text: "Multiple interns hired — confirm you won't be doing production work unsupervised", sev: 4, c: "#34D399" },
+  { text: "No manager or team structure listed — easy to clarify on a call", sev: 3, c: "#34D399" },
+];
+const positives = [
+  { icon: "ti-check", text: "Stipend disclosed upfront — most shady JDs hide this" },
+  { icon: "ti-mood-happy", text: "Zero toxic language — no 'rockstar', 'hustle', or 'ninja'" },
+  { icon: "ti-list-check", text: "Specific, realistic responsibilities for an analyst intern" },
+  { icon: "ti-world", text: "Remote-first company culture, not an office with a remote label" },
+  { icon: "ti-certificate", text: "Internship certificate + PPO pathway — dual upside" },
+  { icon: "ti-chart-bar", text: "Growing client base, no layoffs — stable hiring signal" },
+];
+const cats = [
+  { name: "Requirements", lv: "Medium", cls: "lv-med" },
+  { name: "Culture", lv: "Low", cls: "lv-low" },
+  { name: "Remote", lv: "Low-Medium", cls: "lv-med" },
+  { name: "Hiring", lv: "Medium", cls: "lv-med" },
+  { name: "Company", lv: "Medium", cls: "lv-med" },
+];
+const qNums = [
+  { color: "#818CF8", bg: "#1A1F3A" },
+  { color: "#34D399", bg: "#1A3A2A" },
+  { color: "#FBBF24", bg: "#2A2010" },
+  { color: "#F472B6", bg: "#2A1020" },
+  { color: "#38BDF8", bg: "#101E2A" },
+];
+const qs = [
+  { q: "What percentage of past interns received a PPO, and what were the measurable criteria used?", why: "Tests if the PPO is a genuine career path or just a hook. Vague answers like 'based on performance' with no numbers are a yellow flag.", prompt: "How do I evaluate a PPO offer during an internship interview?" },
+  { q: "Who will I report to daily, and what does week-1 remote onboarding look like?", why: "'Work independently' should mean structured autonomy — not being left without guidance. A good employer has a clear onboarding plan ready.", prompt: "What does a strong remote internship onboarding program look like?" },
+  { q: "Of all the tools listed, which 2–3 will I actually use most in a typical week?", why: "Reveals the real stack vs the wishlist. Also shows how the team works and which skills you'll genuinely sharpen.", prompt: "Which data analytics tools are most valuable to learn in 2025?" },
+  { q: "Can I speak with a current or recent intern before making my decision?", why: "Directly fills the Glassdoor gap. A company confident in their culture will say yes immediately. Hesitation is a signal.", prompt: "How do I ask to speak with a current employee before accepting an internship?" },
+  { q: "Is this role 100% remote long-term, including after any PPO conversion to full-time?", why: "Confirms the remote promise isn't a bait-and-switch. Some companies list remote now but quietly expect relocation post-hire.", prompt: "How do I verify a remote job offer is genuinely remote before accepting?" },
+];
+
+const flEl = document.getElementById("flags-list");
+flags.forEach(f => {
+  flEl.innerHTML += `<div class="flag-row"><div class="flag-dot" style="background:${f.c};" aria-hidden="true"></div><div class="flag-text">${f.text}</div><div class="flag-track"><div class="flag-fill" style="width:${f.sev*10}%;background:${f.c};"></div></div><div class="flag-sev" style="color:${f.c};">${f.sev}</div></div>`;
+});
+const plEl = document.getElementById("pos-list");
+positives.forEach(p => {
+  plEl.innerHTML += `<div class="pos-item"><i class="ti ${p.icon} pos-icon" aria-hidden="true"></i><span>${p.text}</span></div>`;
+});
+const clEl = document.getElementById("cat-list");
+cats.forEach(c => {
+  clEl.innerHTML += `<div class="cat-row"><span class="cat-nm">${c.name}</span><span class="lv ${c.cls}">${c.lv}</span></div>`;
+});
+
+const qaEl = document.getElementById("qs-acc");
+qs.forEach((q, i) => {
+  const d = document.createElement("div"); d.className = "q-item";
+  d.innerHTML = `<button class="q-btn" aria-expanded="false" aria-controls="qd-${i}" id="qb-${i}"><span class="q-num" style="background:${qNums[i].bg};color:${qNums[i].color};">0${i+1}</span><span class="q-text">${q.q}</span><i class="ti ti-chevron-down q-chev" aria-hidden="true"></i></button><div class="q-detail" id="qd-${i}" role="region" aria-labelledby="qb-${i}">${q.why}<br><button class="ask-btn" data-p="${q.prompt.replace(/"/g,'&quot;')}">Ask Claude ↗</button></div>`;
+  qaEl.appendChild(d);
+});
+qaEl.addEventListener("click", e => {
+  const ab = e.target.closest(".ask-btn");
+  if (ab) { sendPrompt(ab.dataset.p); return; }
+  const btn = e.target.closest(".q-btn"); if (!btn) return;
+  const det = btn.nextElementSibling, chev = btn.querySelector(".q-chev"), wasOpen = det.classList.contains("open");
+  document.querySelectorAll(".q-detail.open").forEach(x => x.classList.remove("open"));
+  document.querySelectorAll(".q-chev.open").forEach(x => x.classList.remove("open"));
+  document.querySelectorAll(".q-btn").forEach(x => x.setAttribute("aria-expanded","false"));
+  if (!wasOpen) { det.classList.add("open"); chev.classList.add("open"); btn.setAttribute("aria-expanded","true"); }
+});
+
+const arc = document.getElementById("g-arc"), sNum = document.getElementById("s-num");
+const TARGET = 62, CIRC = 276.5; let fr = 0;
+(function anim() { fr++; const p = Math.min(fr/70,1), e = 1-Math.pow(1-p,3), cur = Math.round(TARGET*e); arc.setAttribute("stroke-dashoffset", CIRC-(CIRC*(cur/100))); sNum.textContent = cur; if (p<1) requestAnimationFrame(anim); })();
+
+new Chart(document.getElementById("radar-chart"), {
+  type: "radar",
+  data: {
+    labels: ["Requirements","Culture","Remote","Hiring","Company"],
+    datasets: [{
+      label: "Risk level",
+      data: [50, 20, 30, 45, 40],
+      backgroundColor: "rgba(129,140,248,0.15)",
+      borderColor: "#818CF8",
+      borderWidth: 2,
+      pointBackgroundColor: ["#FBBF24","#34D399","#34D399","#FBBF24","#FBBF24"],
+      pointBorderColor: "#0D0F1A",
+      pointRadius: 5,
+      pointBorderWidth: 2,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      r: {
+        min: 0, max: 100,
+        ticks: { display: false, stepSize: 25 },
+        grid: { color: "#1E2240" },
+        angleLines: { color: "#1E2240" },
+        pointLabels: { color: "#6B7280", font: { size: 11 } }
+      }
+    }
+  }
+});
+</script>
